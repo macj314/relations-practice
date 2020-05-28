@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RelationsPractice.Models.BoardMember
+
+<h2>BoardMember Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit BoardMember", "Edit", new { id = Model.BoardMemberId })</p>
+<p>@Html.ActionLink("Delete BoardMember", "Delete", new { id = Model.BoardMemberId })</p>

@@ -4,7 +4,7 @@
 
 #### By _**Jason Macie**_
 
-## Description
+## Title
 
 _A project to reinforce the use of MVC, EF, and MySQL._
 

@@ -5,11 +5,11 @@
 @using RelationsPractice.Models;
 @model List<RelationsPractice.Models.NonProfit>;
 
-<h1>Categories</h1>
+<h1>Non Profit Organizations</h1>
 
 @if (@Model.Count == 0)
 {
-  <h3>No categories have been added yet!</h3>
+  <h3>No non profits have been added yet!</h3>
 } 
 
 @foreach (NonProfit nonProfit in Model)

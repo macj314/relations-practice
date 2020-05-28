@@ -36,6 +36,27 @@ namespace RelationsPractice.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Details(int id)
+    {
+      BoardMember thisBoardMember = _db.BoardMembers.FirstOrDefault(boardMembers => boardMembers.BoardMemberId == id);
+      return View(thisBoardMember);
+    }
+
+    public ActionResult Edit(int id)
+    {
+      var thisBoardMember = _db.BoardMembers.FirstOrDefault(boardMembers => boardMembers.BoardMemberId == id);
+      ViewBag.NonProfitId = new SelectList(_db.NonProfits, "NonProfitId", "Name");
+      return View(thisBoardMember);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(BoardMember boardMember)
+    {
+      _db.Entry(boardMember).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
     public ActionResult Delete(int id)
     {
       var thisBoardMember = _db.BoardMembers.FirstOrDefault(boardMembers => boardMembers.BoardMemberId == id);

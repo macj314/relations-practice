@@ -34,6 +34,26 @@ namespace RelationsPractice.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Details(int id)
+    {
+      NonProfit thisNonProfit = _db.NonProfits.FirstOrDefault(nonProfit => nonProfit.NonProfitId == id);
+      return View(thisNonProfit);
+    }
+
+    public ActionResult Edit(int id)
+    {
+      var thisNonProfit = _db.NonProfits.FirstOrDefault(nonProfit => nonProfit.NonProfitId == id);
+      return View(thisNonProfit);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(NonProfit nonProfit)
+    {
+      _db.Entry(nonProfit).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
     public ActionResult Delete(int id)
     {
       var thisNonProfit = _db.NonProfits.FirstOrDefault(nonProfit => nonProfit.NonProfitId == id);
