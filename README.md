@@ -33,6 +33,19 @@ There are no known bugs at the time of this update.
 
 ### Specs
 
+#### SQL Commands for DB
+
+CREATE SCHEMA `relations_practice` ;
+CREATE TABLE `relations_practice`.`non_profit` (
+  `NonProfitId` INT NOT NULL AUTO_INCREMENT,
+  `Title` VARCHAR(255) NULL,
+  PRIMARY KEY (`NonProfitId`));
+CREATE TABLE `relations_practice`.`board_member` (
+  `BoardMemberId` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(255) NULL,
+  `NonProfitId` INT NULL DEFAULT 0,
+  PRIMARY KEY (`BoardMemberId`));
+
 | Spec | Input | Output |
 | :------------- | :------------- | :------------- |
 | **Non Profit DB**|
