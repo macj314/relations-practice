@@ -1,0 +1,15 @@
+  
+@{
+  Layout = "_Layout";
+}
+
+@model RelationsPractice.Models.NonProfit
+
+<h4>Add a new non profit agency</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+    <input type="submit" value="Add new non profit agency" />
+}
+<p>@Html.ActionLink("Show all non profit agencies", "Index")</p>

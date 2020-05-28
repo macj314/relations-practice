@@ -10,7 +10,7 @@ namespace RelationsPractice.Models
         }
 
         public int NonProfitId { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public virtual ICollection<BoardMember> BoardMembers { get; set; }
     }
 }

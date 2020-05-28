@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RelationsPractice.Models.BoardMember
+
+<h4>Add a new org</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.NonProfit)
+    @Html.DropDownList("NonProfitId")
+
+    <input type="submit" value="Add new boardMember" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all boardMembers", "Index")</p>

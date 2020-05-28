@@ -31,14 +31,14 @@ namespace RelationsPractice.Controllers
     [HttpPost]
     public ActionResult Create(BoardMember boardMember)
     {
-      _db.Items.Add(boardMember);
+      _db.BoardMembers.Add(boardMember);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisItem = _db.BoardMembers.FirstOrDefault(boardMembers => boardMembers.BoardMemberId == id);
+      var thisBoardMember = _db.BoardMembers.FirstOrDefault(boardMembers => boardMembers.BoardMemberId == id);
       return View(thisBoardMember);
     }
 

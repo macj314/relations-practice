@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using RelationsPractice.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ namespace RelationsPractice.Controllers
 {
   public class NonProfitController : Controller
   {
-    private readonly RelationsPractice _db;
+    private readonly RelationsPracticeContext _db;
 
     public NonProfitController(RelationsPracticeContext db)
     {
@@ -17,7 +17,7 @@ namespace RelationsPractice.Controllers
 
     public ActionResult Index()
     {
-      List<NonProfit> model = _db.NonProfit.ToList();
+      List<NonProfit> model = _db.NonProfits.ToList();
       return View(model);
     }
 
